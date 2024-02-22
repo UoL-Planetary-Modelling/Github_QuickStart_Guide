@@ -83,3 +83,11 @@ To fork a repository, simply click on the "Fork" button on the repository's page
 
 `git pull origin main   # Fetch changes from the remote repository and merge them into your local branch`
 
+
+# Useful tips
+
+## Downloading individual files
+
+- You can download individual files from GitHub by navigating to the file and clicking the download button. This will save the file on your local machine. Note, this will not track the file.
+- If you would like to download a file from a GitHub repo using the terminal, e.g. if you are in a remote ssh session, you can use wget. Locate the GitHub file you want in the browser, e.g. a jupyter notebook. Click on the "raw" button which will display the raw json format of the notebook, copy the url, and from your terminal execute wget <copied-url>, which will then download the file to your remote directory. Note this will not track the file.
+

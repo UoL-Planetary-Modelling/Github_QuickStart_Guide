@@ -90,4 +90,8 @@ To fork a repository, simply click on the "Fork" button on the repository's page
 
 - You can download individual files from GitHub by navigating to the file and clicking the download button. This will save the file on your local machine. Note, this will not track the file.
 - If you would like to download a file from a GitHub repo using the terminal, e.g. if you are in a remote ssh session, you can use wget. Locate the GitHub file you want in the browser, e.g. a jupyter notebook. Click on the "raw" button which will display the raw json format of the notebook, copy the url, and from your terminal execute wget \<copied-url\>, which will then download the file to your remote directory. Note, this will not track the file.
+- 
+
+## Dealing with pushing files bigger than 100 MB to github
+The free version of Github only allows you to push files that are 100 MB or less. If you commit a file that is 100 MB and try to push it, you won't be allowed to. Deleting the file, recommitting and pushing won't help either because it is now written to your commit history, so you need to modify your commit history before you push. Here are useful instructions that work: https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a.
 

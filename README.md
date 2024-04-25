@@ -42,6 +42,7 @@ GitHub is a platform where you can store, share, and collaborate on software dev
 
 ## Cloning:
 - Cloning a repository is the process of making a copy of an existing repository from GitHub onto your local machine, allowing you to access and work with the repository's files and history locally.
+- Documentation on cloning repos can be found here: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 - To clone a repository, navigate to the repository on GitHub, click on the "Code" button, and copy the URL provided. Then, use the git clone command in your terminal to clone the repository to your local machine:
 
 `git clone <repository-URL>   # Clone the repository to your local machine`
@@ -50,7 +51,9 @@ GitHub is a platform where you can store, share, and collaborate on software dev
 ## Forking:
 - Forking a repository involves creating a personal copy of another user's repository on GitHub, enabling you to freely experiment with changes without affecting the original repository.
 - You can fork a repository by clicking on the "Fork" button on the repository's page. This is useful for contributing to open-source projects or experimenting with someone else's code without affecting the original repository.
-To fork a repository, simply click on the "Fork" button on the repository's page on GitHub.
+To fork a repository, simply click on the "Fork" button on the repository's page on GitHub. You can then play around with the forked version of the repository without affecting the main branch.
+- If you're working on a local copy of the fork, you can push any changes back to the online fork, and then if desired create a pull request to merge the changes from the fork back into the main branch (see below for info on push/pull commands)
+
 
 
 ## Setting up a Remote (online) Repository:
@@ -63,16 +66,31 @@ To fork a repository, simply click on the "Fork" button on the repository's page
 
 `git branch -M main   # Rename the default branch (if needed). 'main' is typically the standard name used for a repo, but 'master' has been used historically which can sometimes cause issues with naming discrepancies`
 
+- More info on working with remote repositories here:
+  - https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+  - https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories
+
+
 
 ## Pushing Changes:
 - Git push is the command used to upload local repository changes to a remote repository, ensuring that any modifications made locally are reflected in the online version.
 - Used when your local repository is ahead of the remote one.
-- After making changes to files in your local repository, you can push those changes to your linked remote GitHub repository using the git push command. This uploads your changes to GitHub and updates the remote repository:
 
+- If it hasn't already been done, you can link your local repo with the url of the online repo with the command:
+`git remote add origin https://github.com/[username]/[repo_name].git`
+- You can verify the link has been added using:
+`git remote –v`
+
+
+- After making changes to files in your local repository, you can push those changes to your linked remote GitHub repository using the git push command. This uploads your changes to GitHub and updates the remote repository.
 `git push -u origin main   # Push the local repository to the remote repository main`
 
 `git push origin <branch-name>   # Push changes to the remote repository <branch-name>`
 
+- More info on 'git push' here: https://github.com/git-guides/git-push
+
+- To push between a remote server and an online repo you may need to create a personal access token to use in place of a password. More info here:
+  - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 
 ## Pulling Changes:
